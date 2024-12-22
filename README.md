@@ -81,25 +81,29 @@ The project consists of a Django backend and a React frontend, and it includes f
 
 1. Install required Python packages:
 
-   ```pip install -r requirements.txt
+```console
+ pip install -r requirements.txt
 
-   ```
+```
 
 2. Apply database migrations:
 
-   ```python manage.py migrate
+```console
+ python manage.py migrate
 
-   ```
+```
 
 3. Seed the Database with default data:
 
-```python manage.py create_default_data
+```console
+python manage.py create_default_data
 
 ```
 
 4. Start backend development server:
 
-```python manage.py runserver
+```console
+python manage.py runserver
 
 ```
 
@@ -107,19 +111,22 @@ The project consists of a Django backend and a React frontend, and it includes f
 
 1. Access to the client folder:
 
-```cd client
+```console
+cd client
 
 ```
 
 2. Install neccesary dependencies:
 
-```npm install
+```console
+npm install
 
 ```
 
 3. Start frontend development server:
 
-```npm run dev
+```console
+npm run dev
 
 ```
 
