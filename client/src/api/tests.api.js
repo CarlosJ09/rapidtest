@@ -11,9 +11,14 @@ export const getAllTests = async (page, category) => {
   return await api.get(url);
 };
 
-export const getInstructorTests = async (category) => {
-  let url = `api/tests/?user=true`;
-  if (category) url = `api/tests/?user=true&category=${category}`;
+export const getInstructorTests = async (page, category) => {
+  const params = new URLSearchParams();
+
+  if (page) params.append("page", page);
+  if (category) params.append("category", category);
+  params.append("user", true);
+
+  let url = `api/tests/?${params.toString()}`;
   return await api.get(url);
 };
 

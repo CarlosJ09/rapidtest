@@ -18,8 +18,10 @@ function InstructorHomePage() {
   }, []);
 
   useEffect(() => {
-    fetchTests(selectedCategory?.id);
-  }, [selectedCategory]);
+    if (pagination.page) {
+      fetchTests(pagination.page, selectedCategory?.id);
+    }
+  }, [selectedCategory, pagination.page]);
 
   const fetchTests = async (page, category) => {
     const res = await getInstructorTests(page, category);

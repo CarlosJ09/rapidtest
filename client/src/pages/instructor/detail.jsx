@@ -36,7 +36,7 @@ function DetailPage() {
     try {
       const res = await deleteTest(id);
       if (res.status === 204) {
-        navigate("/");
+        navigate("/instructor");
       } else if (res?.data?.detail) {
         toast.error(res.data.detail);
       }

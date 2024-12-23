@@ -90,7 +90,7 @@ class TestView(viewsets.ModelViewSet):
         if category_id:
             queryset = queryset.filter(category=category_id)
 
-        return queryset
+        return queryset.order_by("-created_at")
 
 
 @authentication_classes([BearerTokenAuthentication])

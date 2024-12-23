@@ -110,7 +110,7 @@ function TakeTestPage() {
       });
       if (res.status === 200) {
         toast.success("Test submitted successfully");
-        navigate(`/`);
+        navigate(`/student`);
       }
     } catch (error) {
       console.error("Error submitting the test:", error);

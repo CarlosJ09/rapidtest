@@ -41,11 +41,11 @@ function CreatePage() {
     }
 
     if (currentStep === 0) {
-      if (testInfoData.duration < 1) {
-        toast.error("Duration must be greater than 0");
-        return;
-      } else if (Object.values(testInfoData).some((value) => !value)) {
+      if (Object.values(testInfoData).some((value) => !value)) {
         toast.error("All fields are required");
+        return;
+      } else if (testInfoData.duration < 1) {
+        toast.error("Duration must be greater than 0");
         return;
       }
     } else if (currentStep === 1) {

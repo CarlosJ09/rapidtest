@@ -39,7 +39,12 @@ class AnswerSerializer(serializers.ModelSerializer):
 class OptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Option
-        exclude = ["question", "is_correct"]
+        exclude = ["question"]
+        
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation.pop("is_correct", None)
+        return representation
 
 
 class QuestionSerializer(serializers.ModelSerializer):
